@@ -14,11 +14,10 @@ from word_list import word_list
 print(logo)
 index = 0
 n = 0
+lives = 7
 chosen_word = random.choice(word_list)
 print(f"The word has {len(chosen_word)} letters.")
 blanks = list('_' * len(chosen_word)) 
-lives = 7
-demo_lives = 0
 
 print("------------------------------------")
 guess = input("Guess a letter : ").lower()
