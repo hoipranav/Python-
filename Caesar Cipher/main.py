@@ -28,15 +28,17 @@ def decrypt(shift,text):
     print(f"Your Decoded Message is : {decrypted_word}\n\n")
 
 def start():
-    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
     if direction == 'encode':
         encrypt(text = input("Type your message:\n"), shift = int(input("Type the shift number:\n")))
     elif direction == 'decode':
         decrypt(text = input("Type your message:\n"), shift = int(input("Type the shift number:\n")))
 
 start()
-again = input("Type 'yes' if you want to go again.Otherwise type 'no'.\n")
-if again == 'yes':
-    start()
-else:
-    print("Thank you.!")
+while True:
+    again = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n").lower()
+    if again == 'yes':
+        start()
+    else:
+        print("Thank you.!")
+        break
