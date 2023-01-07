@@ -1,6 +1,7 @@
 import random
-import word_list
-import ascii
+from ascii import stages 
+from ascii import logo
+from word_list import word_list
 
 def improve():
         if guess in blanks:
@@ -8,9 +9,6 @@ def improve():
         else:
                 print(f"You've guessed the letter {guess}, that's not in the word.\n")
 
-from ascii import stages 
-from ascii import logo
-from word_list import word_list
 print(logo)
 index = 0
 n = 0
@@ -23,8 +21,7 @@ print("------------------------------------")
 guess = input("Guess a letter : ").lower()
 if guess not in chosen_word:
         lives -= 1
-if guess not in chosen_word:
-                print(stages[lives])
+        print(stages[lives])
 for i in list(chosen_word):
         if i == guess:                 
                 index = n
@@ -44,7 +41,6 @@ while '_' in blanks:
                         guess = input("Guess a letter : ").lower()
                         if guess not in chosen_word:
                                 lives -= 1
-                        if guess not in chosen_word:
                                 print(stages[lives])
                         if '_' in blanks:
                                 for i in list(chosen_word):                              
